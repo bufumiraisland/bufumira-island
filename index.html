@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bufumira Island | Lake Victoria</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #18352f;
+    background: #f7f4eb;
+    line-height: 1.6;
+}
+
+/* NAVIGATION */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 5%;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+}
+
+.logo img {
+    height: 75px;
+    width: auto;
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #18352f;
+    font-weight: bold;
+}
+
+.nav-button {
+    background: #315d51;
+    color: white !important;
+    padding: 11px 18px;
+    border-radius: 8px;
+}
+
+/* HERO */
+.hero {
+    min-height: 650px;
+    background:
+        linear-gradient(rgba(0,0,0,0.48), rgba(0,0,0,0.48)),
+        url("images/hero.jpg") center/cover;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+    color: white;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.small-title {
+    letter-spacing: 5px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: 80px;
+    line-height: 0.95;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #b9ed79;
+}
+
+.hero h2 {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 700px;
+    margin-bottom: 28px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.btn-primary {
+    background: #a9e9d9;
+    color: #18352f;
+}
+
+.btn-outline {
+    border: 2px solid white;
+    color: white;
+}
+
+/* SECTIONS */
+section {
+    padding: 75px 8%;
+}
+
+section h2 {
+    font-family: Georgia, serif;
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: #18352f;
+}
+
+.section-text {
+    max-width: 800px;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+/* EXPERIENCE CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card h3 {
+    font-family: Georgia, serif;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+/* COMMUNITY */
+.community {
+    background: #e8efe6;
+}
+
+.community-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.community-item {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.community-item h3 {
+    margin-bottom: 8px;
+}
+
+/* GALLERY */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* VISIT */
+.visit {
+    background: #315d51;
+    color: white;
+    text-align: center;
+}
+
+.visit h2 {
+    color: white;
+}
+
+.visit p {
+    max-width: 750px;
+    margin: 0 auto 25px;
+}
+
+/* CONTACT */
+.contact-box {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 650px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.contact-box p {
+    margin-bottom: 15px;
+}
+
+.contact-box a {
+    color: #315d51;
+    font-weight: bold;
+}
+
+.whatsapp {
+    display: inline-block;
+    margin-top: 10px;
+    background: #25D366;
+    color: white !important;
+    padding: 13px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+    background: #18352f;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+footer h2 {
+    color: white;
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .logo img {
+        height: 55px;
+    }
+
+    .hero {
+        min-height: 600px;
+        padding: 50px 6%;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .hero h2 {
+        font-size: 25px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .community-box {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+
+    <div class="logo">
+        <img src="images/logo.png" alt="Bufumira Island Logo">
+    </div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experiences">Experiences</a></li>
+        <li><a href="#community">Community</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+            <a class="nav-button"
+               href="https://wa.me/256704728118"
+               target="_blank">
+               WhatsApp
+            </a>
+        </li>
+    </ul>
+
+</nav>
+
+
+<!-- HOME -->
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            DISCOVER • EXPLORE • BELONG
+        </div>
+
+        <h1>
+            BUFUMIRA<br>
+            <span>ISLAND</span>
+        </h1>
+
+        <h2>
+            Where nature, culture and island life meet
+        </h2>
+
+        <p>
+            Unspoiled nature, fresh air, island life and simple
+            outdoor experiences. Come and discover the beauty
+            of Bufumira Island.
+        </p>
+
+        <a href="#visit" class="btn btn-primary">
+            Plan Your Visit →
+        </a>
+
+        <a href="#experiences" class="btn btn-outline">
+            Explore Experiences
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+    <h2>Where the lake meets island life</h2>
+
+    <p class="section-text">
+        Bufumira Island is a peaceful destination on Lake Victoria,
+        Uganda. It offers visitors an opportunity to experience
+        nature, lake views, local community life, fishing,
+        camping and beautiful island sunsets.
+    </p>
+
+    <p class="section-text">
+        Our vision is to develop Bufumira into a responsible
+        tourism destination while creating opportunities for
+        local people and protecting the natural environment.
+    </p>
+
+</section>
+
+
+<!-- EXPERIENCES -->
+<section id="experiences">
+
+    <h2>Discover the Island</h2>
+
+    <p class="section-text">
+        Experience the beauty of Bufumira through simple,
+        authentic island adventures.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="images/camping.jpg" alt="Camping on Bufumira Island">
+            <div class="card-content">
+                <h3>Camping</h3>
+                <p>
+                    Sleep close to nature and enjoy peaceful
+                    island nights under the stars.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/boat.jpg" alt="Boat experience">
+            <div class="card-content">
+                <h3>Boat Experiences</h3>
+                <p>
+                    Explore Lake Victoria and enjoy beautiful
+                    views around the island.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/lake.jpg" alt="Lake Victoria">
+            <div class="card-content">
+                <h3>Lake Views</h3>
+                <p>
+                    Relax beside the lake and enjoy the fresh
+                    island air and peaceful surroundings.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/sunset.jpg" alt="Sunset on Bufumira Island">
+            <div class="card-content">
+                <h3>Island Sunsets</h3>
+                <p>
+                    End the day with beautiful sunsets over
+                    Lake Victoria.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- COMMUNITY -->
+<section class="community" id="community">
+
+    <h2>Growing Bufumira Together</h2>
+
+    <p class="section-text">
+        Tourism can create opportunities while keeping the
+        island's culture and environment at the heart of
+        development.
+    </p>
+
+    <div class="community-box">
+
+        <div class="community-item">
+            <h3>Local Farmers</h3>
+            <p>
+                Supporting local agricultural products and
+                farmers.
+            </p>
+        </div>
+
+        <div class="community-item">
+            <h3>Fishing Communities</h3>
+            <p>
+                Celebrating the traditional fishing lifestyle
+                around Lake Victoria.
+            </p>
+        </div>
+
+        <div class="community-item">
+            <h3>Local Food</h3>
+            <p>
+                Visitors can experience fresh and locally
+                produced food.
+            </p>
+        </div>
+
+        <div class="community-item">
+            <h3>Boat Experiences</h3>
+            <p>
+                Creating opportunities for local boat operators.
+            </p>
+        </div>
+
+        <div class="community-item">
+            <h3>Jobs</h3>
+            <p>
+                Tourism can create new opportunities for
+                island residents.
+            </p>
+        </div>
+
+        <div class="community-item">
+            <h3>Environment</h3>
+            <p>
+                Protecting the island, lake and natural
+                surroundings.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GALLERY -->
+<section id="gallery">
+
+    <h2>Island Gallery</h2>
+
+    <p class="section-text">
+        A glimpse of the beauty and peaceful atmosphere
+        of Bufumira Island.
+    </p>
+
+    <div class="gallery-grid">
+
+        <img src="images/hero.jpg" alt="Bufumira Island">
+        <img src="images/camping.jpg" alt="Camping">
+        <img src="images/boat.jpg" alt="Boat on Lake Victoria">
+        <img src="images/lake.jpg" alt="Lake Victoria">
+        <img src="images/sunset.jpg" alt="Island sunset">
+
+    </div>
+
+</section>
+
+
+<!-- VISIT -->
+<section class="visit" id="visit">
+
+    <h2>Plan Your Bufumira Experience</h2>
+
+    <p>
+        Ready to discover Bufumira Island?
+        Contact us to ask about visiting, camping,
+        boat experiences and future accommodation.
+    </p>
+
+    <a href="#contact" class="btn btn-primary">
+        Contact Us →
+    </a>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+
+    <h2>Contact Bufumira Island</h2>
+
+    <div class="contact-box">
+
+        <p>
+            <strong>WhatsApp:</strong><br>
+            <a href="https://wa.me/256704728118" target="_blank">
+                +256 704 728 118
+            </a>
+        </p>
+
+        <p>
+            <strong>Call:</strong><br>
+            <a href="tel:+256778282022">
+                0778 282 022
+            </a>
+        </p>
+
+        <a class="whatsapp"
+           href="https://wa.me/256704728118?text=Hello%20Bufumira%20Island%2C%20I%20would%20like%20to%20plan%20a%20visit."
+           target="_blank">
+           WhatsApp Us
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+
+<!-- BUFUMIRA MERCHANDISE -->
+<section class="merchandise" id="merchandise">
+
+    <div class="merch-header">
+        <span>TAKE BUFUMIRA HOME</span>
+        <h2>Bufumira Merchandise</h2>
+        <p>
+            Bring a piece of the island with you.
+            Discover our collection of Bufumira Island souvenirs.
+        </p>
+    </div>
+
+    <div class="merch-grid">
+
+    <!-- T-SHIRT -->
+    <div class="merch-card">
+        <div class="merch-image">
+            <img src="images/tshirt.jpg" alt="Bufumira Island T-Shirt">
+        </div>
+
+        <h3>Bufumira Island T-Shirt</h3>
+        <p>Comfortable island-inspired T-shirt.</p>
+        <strong>UGX 50000</strong>
+
+        <a href="https://wa.me/256704728118" class="merch-btn">
+            Order on WhatsApp
+        </a>
+    </div>
+
+
+    <!-- CAP -->
+    <div class="merch-card">
+        <div class="merch-image">
+            <img src="images/cap.jpg" alt="Bufumira Island Cap">
+        </div>
+
+        <h3>Bufumira Island Cap</h3>
+        <p>Take the island spirit wherever you go.</p>
+        <strong>UGX 30,000</strong>
+
+        <a href="https://wa.me/256704728118" class="merch-btn">
+            Order on WhatsApp
+        </a>
+    </div>
+
+
+    <!-- TOTE BAG -->
+    <div class="merch-card">
+        <div class="merch-image">
+            <img src="images/totebag.jpg" alt="Bufumira Island Tote Bag">
+        </div>
+
+        <h3>Bufumira Tote Bag</h3>
+        <p>A simple souvenir for your island memories.</p>
+        <strong>UGX 35,000</strong>
+
+        <a href="https://wa.me/256704728118" class="merch-btn">
+            Order on WhatsApp
+        </a>
+    </div>
+
+</div>
+</section>
+
+<style>
+.merchandise {
+    padding: 80px 7%;
+    background: #f7f5ed;
+    text-align: center;
+}
+
+.merch-header span {
+    color: #6b8e23;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.merch-header h2 {
+    font-size: 42px;
+    margin: 12px 0;
+    color: #26351f;
+}
+
+.merch-header p {
+    max-width: 600px;
+    margin: 0 auto 45px;
+    color: #666;
+    line-height: 1.7;
+}
+
+.merch-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.merch-card {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    text-align: left;
+}
+
+.merch-image {
+    height: 250px;
+    background: #dfe5d5;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b8e23;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.merch-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+    display: block;
+}
+.merch-card h3 {
+    color: #26351f;
+    margin: 20px 0 8px;
+}
+
+.merch-card p {
+    color: #777;
+}
+
+.merch-card strong {
+    display: block;
+    font-size: 20px;
+    margin: 15px 0;
+    color: #26351f;
+}
+
+.merch-btn {
+    display: inline-block;
+    padding: 12px 18px;
+    background: #6b8e23;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.merch-btn:hover {
+    opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+    .merch-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .merch-header h2 {
+        font-size: 34px;
+    }
+}
+</style>
+
+    <h2>BUFUMIRA ISLAND</h2>
+
+    <p>Lake Victoria • Uganda</p>
+
+    <p>Nature • People • Community • Adventure</p>
+
+    <br>
+
+    <p>
+        © 2026 Bufumira Island. All rights reserved.
+    </p>
+
+</footer>
+
+</body>
+</html>
